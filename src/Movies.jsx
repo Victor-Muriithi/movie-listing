@@ -45,7 +45,7 @@ function Movies({search}) {
                     textDecoration:'none'
                 }}
 
-                onClick={()=>{setHeader('')}}
+                onClick={()=>{setHeader(false)}}
                 >
                 <img src={"https://image.tmdb.org/t/p/original/"+movie.poster_path} alt=""
                 style={{

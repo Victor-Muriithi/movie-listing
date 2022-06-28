@@ -149,6 +149,12 @@ code {
 
 }
 
+.MovieContainer .content .notShow {
+ display: none;
+
+}
+
+
 .MovieContainer .content .navigation .navList {
   width: 100%;
   margin-top: 30px;
@@ -173,6 +179,9 @@ code {
   border-radius: 20px;
   transform: scale(1.03);
 }
+
+
+
 
 .content .genre {
   color: white;
@@ -227,3 +236,19 @@ code {
 .Movies .movie .movieTitle {
   color: white;
 }
+
+/*************/
+/*Movie Details*/
+/*************/
+
+.movieDetails {
+
+}
+
+
+
+/*************/
+/*Media Queries*/
+/*************/
+
+

@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'
+import {useContext} from 'react';
+import {urlContext} from './Components/urlContext';;
 
 
 
 
 function MovieDetails() {
+  const {setHeader, header}= useContext(urlContext);
 
   const { id } = useParams();
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=f66418c0865c5fe805b1206fdcf09930&language=en-US`
@@ -22,7 +25,10 @@ function MovieDetails() {
 
   return (
     <div className='movieDetails'>
-      <Link to='/'>
+      <Link to='/'
+      onClick={()=>setHeader('Discover') && console.log(header)}
+
+      >
         <p style={{
           color: 'white',
         }}>HOME</p>
