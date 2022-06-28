@@ -36,7 +36,7 @@ function Movies({search}) {
 
             else if(val.title.toLowerCase().includes(search.toLowerCase())){
                 return val
-            }return;
+            }
         }
         ).map((movie)=>(
             <div className="movie" key={movie.id}>
