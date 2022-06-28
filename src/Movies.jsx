@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import {useContext} from 'react';
+import {urlContext} from './Components/urlContext';
 
 
 
@@ -10,6 +12,8 @@ import {useSelector} from 'react-redux';
 
 
 function Movies({search}) {
+
+    const {setHeader}= useContext(urlContext);
     const url = useSelector((state)=> state.movieList.movieList)
     console.log(url)
 
@@ -26,13 +30,13 @@ function Movies({search}) {
     return (
         <div className='Movies'>
         { arr.filter((val)=>{
-            if(search === ''){
+          if(search === ''){
                 return val
             }
 
             else if(val.title.toLowerCase().includes(search.toLowerCase())){
                 return val
-            }
+            }return;
         }
         ).map((movie)=>(
             <div className="movie" key={movie.id}>
@@ -41,7 +45,7 @@ function Movies({search}) {
                     textDecoration:'none'
                 }}
 
-                onClick={()=>{}}
+                onClick={()=>{setHeader('')}}
                 >
                 <img src={"https://image.tmdb.org/t/p/original/"+movie.poster_path} alt=""
                 style={{

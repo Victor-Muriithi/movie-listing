@@ -3,8 +3,11 @@ import React, { useState, useEffect } from 'react'
 import {useParams, Link} from 'react-router-dom';
 
 
+
+
 function MovieDetails() {
-    const {id} = useParams();
+
+  const {id} = useParams();
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=f66418c0865c5fe805b1206fdcf09930&language=en-US`
   const [details, setDetails]=useState([])
 
